@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>&lt;title&gt;&lt;/title&gt;</title>
+  </head>
+  <body>
+    <div>
+      406: Not Acceptable
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+      var socket = io();
+        socket.on('user-count-change', function (userCount, maxUserCount) {
+          console.log(userCount, maxUserCount);
+          if(userCount >= maxUserCount) {
+            console.log('redirect');
+            window.location.replace("/");
+          }
+        });
+    </script>
+  </body>
+</html>

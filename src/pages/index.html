@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>&lt;title&gt;&lt;/title&gt;</title>
+  </head>
+  <body>
+    <div style="text-align:center">
+      <img src="javascript:makehref()">
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+      var socket = io();
+      socket.on('user-count-change', function (userCount, maxUserCount) {
+        console.log(userCount, maxUserCount);
+      });
+      
+    </script>
+  </body>
+</html>
